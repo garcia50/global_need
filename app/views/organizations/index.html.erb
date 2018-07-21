@@ -1,0 +1,15 @@
+<h1>Organizations</h1>
+
+<ul>
+  <% @organizations.each do |org| %>
+    <%= link_to organization_path(org) do %>
+      <li> 
+        <div id="org-name"><%= org.name %></div>
+        <div id="org-desc"><%= org.description %></div> 
+      </li>
+    <% end %>
+    <br>
+  <% end %>
+</ul>
+
+<%= will_paginate @organizations %>
