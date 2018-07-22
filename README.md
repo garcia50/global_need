@@ -6,13 +6,13 @@ Global Need is a network application that specifically joins people and organiza
 
 ## Getting Started
 #### Good To Know
-ruby -v `2.5.1p57`
-rails v `5.2.0`
+ruby -v `2.5.1p57`,
+rails v `5.2.0`,
 Database `pg`
 
 #### Installing
 
-** To setup this application please follow these instructions:**
+**To setup this application please follow these instructions:**
 
 CLI ->
 
@@ -36,6 +36,6 @@ CLI ->
 ![alt text](global_need_schema.png "global_need_schema.png")
 
 
-## Build With
+## Built With
 
 Rails
