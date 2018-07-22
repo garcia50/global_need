@@ -10,7 +10,7 @@ ruby -v `2.5.1p57`,
 rails v `5.2.0`,
 Database `pg`
 
-### Installing
+### Installation -
 
 **To setup this application please follow these instructions:**
 
