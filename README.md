@@ -1,24 +1,40 @@
-# README
+#Global Need
+Welcome Users!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Global Need is a network application that specifically joins people and organizations who's desire are to provide aid around the globe. Whether a user has experience in the medical field, construction industry or is a general humanitarian, etc., a user can search through different organizations and find a match that suits his/her expertise. An Organization is also able to create opportunities to allow people to join them and together complete the objective of providing aid around the world.  
 
-Things you may want to cover:
 
-* Ruby version
+##Getting Started
+####Good To Know
+ruby -v `2.5.1p57`
+rails v `5.2.0`
+Database `pg`
 
-* System dependencies
+####Installing
 
-* Configuration
+**To setup this application please follow these instructions:**
 
-* Database creation
+CLI ->
 
-* Database initialization
+`git clone git@github.com:garcia50/to_do_list.git`
 
-* How to run the test suite
+`cd global_need`
+  
+###Then run,
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle install`
 
-* Deployment instructions
+###Then, 
 
-* ...
+`rails db:create db:migrate`
+
+###Start server: 
+
+`rails s`
+
+## Schema
+![alt text](schema.png "global_need_schema.png")
+
+
+##Build With
+Rails
