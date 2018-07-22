@@ -19,15 +19,15 @@ CLI ->
 
 `cd global_need`
   
-### Then run,
+#### Then run,
 
 `bundle install`
 
-### Then, 
+#### Then, 
 
 `rails db:create db:migrate`
 
-### Start server: 
+#### Start server: 
 
 `rails s`
 
