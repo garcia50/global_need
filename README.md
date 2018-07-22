@@ -2,6 +2,9 @@
 Welcome Users!
 Global Need is a network application that specifically joins people and organizations who's desires are to provide aid around the globe. Whether a user has experience in the medical field, construction industry or is a general humanitarian, etc., a user can search through different organizations and find a match that suits his/her expertise. An Organization is also able to create opportunities to allow people to join them and together complete the objective of providing aid around the world.  
 
+## Visit App on HEROKU
+https://globalneed.herokuapp.com/
+
 ## Getting Started
 #### Good To Know:
 ruby -v `2.5.1p57`,
