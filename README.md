@@ -5,12 +5,12 @@ Global Need is a network application that specifically joins people and organiza
 
 
 ## Getting Started
-#### Good To Know
+#### Good To Know:
 ruby -v `2.5.1p57`,
 rails v `5.2.0`,
 Database `pg`
 
-#### Installing
+### Installing
 
 **To setup this application please follow these instructions:**
 
