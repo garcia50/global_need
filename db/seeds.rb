@@ -12,6 +12,6 @@
     email: Faker::Internet.email, 
     phone: Faker::PhoneNumber.cell_phone, 
     description: Faker::Lorem.sentence,
-    bio: Faker::Lorem.paragraph(2)
+    bio: Faker::Lorem.paragraph(4)
   )
 end
