@@ -4,4 +4,8 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.paginate(page: params[:page])
   end
 
+  def show
+    @organization = Organization.find(params[:id])
+  end
+
 end
