@@ -1,0 +1,74 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /*width: 100%;*/
+  /*color: red;*/
+
+}
+
+@media screen and (max-width: 1300px)
+{
+  body
+  {
+    /*color: red;*/
+    /*padding-top: 17%;*/
+  }
+}
+
+.flash {  
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  color: #42e5f4;
+  text-decoration-color: red;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  background-color: #606060;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  margin: 20px; 
+  text-shadow: 2px 2px grey;
+}
+
+.nav h1 {
+  display: flex;
+  padding-right: 550px;
+}
+
+.welcome {
+  text-align: -webkit-center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(children.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.welcome h1 {
+  color: white;
+}
+
+.welcome h3 {
+  color: white;
+}
+
+footer {
+  text-align: -webkit-center;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
