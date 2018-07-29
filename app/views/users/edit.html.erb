@@ -1,0 +1,42 @@
+<div class="edit-account">
+  <% if current_user %>
+    <div class="text-center">
+      <h2>Modify Account</h2>
+      <br>
+      <%= form_for @user,:html=>{:class => 'login-form'} do |f| %>  
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control" %>
+
+        <%= f.label :age %>
+        <%= f.text_field :age, class: "form-control" %>
+
+        <%= f.label :sex %>
+        <%= f.text_field :sex, class: "form-control" %>
+
+        <%= f.label :skills %>
+        <%= f.text_field :skills, class: "form-control" %>
+      
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <br>
+        <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+      <% end %>
+    </div>
+  <% else %>
+    <%= render file: 'public/404' %>
+  <% end %>
+  <%= link_to "cancel", root_path %>
+</div>
+

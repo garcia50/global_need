@@ -7,6 +7,6 @@
   <%= @organization.email %>
   <%= @organization.phone %>
 <% else %>
-  <%= button_to "Sign In To Contact Us", login_path, { method: :get, params: { redirect_to: organization_path(@organization) } } %>
+  <%= button_to "Sign In To Contact Us", login_path, { method: :get, params: { redirect_back: organization_path(@organization) } } %>
 <% end %>
 

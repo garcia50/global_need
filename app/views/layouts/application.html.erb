@@ -11,12 +11,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <% unless controller_name == "welcome" %>
-      <%= render "navigation/nav" %>
-    <% end %>
   </head>
 
   <body>
+    <%= render "navigation/nav" %>
+    
     <div class="flash">
       <% flash.each do |type, message| %>
         <%= format_error_messages(type, message).html_safe %>

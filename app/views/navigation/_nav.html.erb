@@ -1,6 +1,10 @@
 <div class="nav">
   <% if current_user %>
-    <%= link_to "Home", dashboard_path(current_user) %>
+    <%= link_to "Home", root_path %>
     <%= link_to "Logout", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "login", login_path %>
+    <%= link_to "signup", new_user_path %>
   <% end %>
 </div>
+
