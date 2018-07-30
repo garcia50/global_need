@@ -37,6 +37,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-sass'
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
+gem 'database_cleaner'
+gem 'capybara', '~> 2.13'
 
 group :test do 
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
