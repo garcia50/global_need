@@ -1,6 +1,29 @@
-<div class="welcome">
+<div class="container welcome">
   <%= link_to organizations_path do %>
     <h1>Global Need</h1>
     <h3>Connect. Grow. Serve.</h3>
   <% end %>
 </div>
+
+<div class="welcome-pictures">
+  <%= image_tag("children.jpeg", border: 0, class: "mySlides")%>
+  <%= image_tag("children_2.jpeg", border: 0, class: "mySlides")%>
+  <%= image_tag("volunteer_3.jpeg", border: 0, class: "mySlides")%>
+</div> 
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>
