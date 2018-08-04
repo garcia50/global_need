@@ -1,10 +1,12 @@
 <div class="nav">
   <% if current_user %>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Logout", logout_path, method: :delete %>
+    <div class="globe"><%= link_to image_tag("white-globe.png", width: 45, height: 45), root_path %></div>
+    <%= link_to image_tag("user-icon.png", border: 0, width: 35, height: 35), edit_user_path(current_user), class: "user-icon" %>
   <% else %>
-    <%= link_to "login", login_path %>
-    <%= link_to "signup", new_user_path %>
+    <div class="login">
+      <%= link_to "login", login_path %> /
+      <%= link_to "signup", new_user_path%>
+    </div>
   <% end %>
 </div>
 
