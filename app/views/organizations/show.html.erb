@@ -1,12 +1,16 @@
-<h1><%= @organization.name %></h1>
-<br>
-<h2>Who We Are</h2>
-<h2><%= @organization.bio %></h2>
-
-<% if current_user %>
-  <%= @organization.email %>
-  <%= @organization.phone %>
-<% else %>
-  <%= button_to "Sign In To Contact Us", login_path, { method: :get, params: { redirect_back: organization_path(@organization) } } %>
-<% end %>
-
+<div class="container org-show">
+  <h1><%= @organization.name %></h1>
+  <br>
+  <div class="panel">
+    <h2>Who We Are</h2>
+    <h2><%= @organization.bio %></h2>
+    <br>
+    <% if current_user %>
+      Email: <%= @organization.email %>
+      <br>
+      Phone: <%= @organization.phone %>
+    <% else %>
+      <%= button_to "Sign In To Contact Us", login_path, { method: :get, params: {redirect_back: organization_path(@organization)} } %>
+    <% end %>
+  </div>
+</div>

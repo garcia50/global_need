@@ -37,6 +37,9 @@
   <% else %>
     <%= render file: 'public/404' %>
   <% end %>
-  <%= link_to "cancel", root_path %>
+  <br>
+  <%= link_to "cancel", organizations_path %>
+  <br>  
+  <%= link_to "Logout", logout_path, method: :delete %>
 </div>
 

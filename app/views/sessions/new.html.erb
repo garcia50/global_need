@@ -12,8 +12,8 @@
     <%= submit_tag "Login", class: 'btn btn-default btn-lg btn-submit' %>
     <br>
     <br>
-    <%= hidden_field_tag('redirect_to', params[:redirect_to]) %>
-    <%= link_to "SignUp", new_user_path, params: { redirect_to: params[:redirect_to] } %>
+    <%= hidden_field_tag('redirect_back', params[:redirect_back]) %>
+    <%= link_to "SignUp", new_user_path(redirect_back: params[:redirect_back]) %>
     <br>
     <br>
     <%= link_to "back", root_path %>

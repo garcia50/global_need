@@ -1,15 +1,26 @@
-<h1>Organizations</h1>
-
-<ul>
-  <% @organizations.each do |org| %>
-    <%= link_to organization_path(org) do %>
-      <li> 
-        <div id="org-name"><%= org.name %></div>
-        <div id="org-desc"><%= org.description %></div> 
-      </li>
+<div class="org-index text-center">
+  <h1>Global Need Organizations</h1>
+  <div class="container org-container">
+    <br>
+    <%= form_tag(organizations_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Organizations" %>
+      <%= submit_tag "Search", :name => nil %>
     <% end %>
     <br>
-  <% end %>
-</ul>
-
-<%= will_paginate @organizations %>
+    <br>
+    <ul>
+      <% @organizations.each do |org| %>
+        <div class="col-lg-4 col-md-3">
+          <div class="panel">
+            <%= link_to organization_path(org) do %>
+              <div id="org-name"><%= org.name %></div>
+              <div id="org-desc"><%= org.description %></div> 
+            <% end %>
+            <br>
+          </div>  
+        </div>   
+      <% end %>
+    </ul>
+  </div>
+  <%= will_paginate @organizations %>
+</div>
