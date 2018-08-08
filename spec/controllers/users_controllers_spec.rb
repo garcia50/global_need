@@ -44,7 +44,7 @@ describe UsersController do
 
       it "creates an error message" do 
         post(:create, params: {user: params})
-        expect(flash[:notice]).to be_present
+        expect(flash[:error]).to be_present
       end
 
       it "renders the new template" do
@@ -54,7 +54,7 @@ describe UsersController do
     end
   end
 
-  describe "GET #edit" do
+  describe "PUT #update" do
     context "modifying given user data" do
       let(:params) do
         { 
@@ -66,22 +66,64 @@ describe UsersController do
         }
       end
 
-      it "responds to GET" do
-        post(:create, params: {user: params})
-        get(:edit, params: {id: User.last.id})
-        expect(response).to render_template(:edit)
+      let(:user) { User.create(params) }
+
+      context "given a successful user modification" do
+        before do
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        end
+        it "renders a success message" do
+          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
+          expect(flash[:notice]).to be_present
+        end
+
+        it "redirects to user path" do
+          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
+          expect(response).to redirect_to user_path(user)
+        end
       end
 
-      it "responds to PATCH" do
-        post(:create, params: {user: params})
-        patch(:update, params: {id: 5, user: params})
-        expect(response).to be_redirect
+      context "given an unsuccessful user modification" do
+        before do
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        end
+
+        it "renders an error message" do
+          patch(:update, params: {id: user.id, user: {first_name: "dav"}})
+          expect(flash[:error]).to be_present
+        end
       end
 
+      context "given an unauthenticated user" do 
+        it "redirects back to the home page" do
+          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
+          expect(response).to redirect_to root_path
+        end
+      end
     end
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
