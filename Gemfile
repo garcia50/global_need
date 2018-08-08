@@ -41,6 +41,7 @@ gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 gem 'database_cleaner'
 gem 'capybara', '~> 2.13'
 
+
 group :test do 
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
   gem 'faker', '~> 1.9', '>= 1.9.1'
+  gem 'factory_bot_rails', '~> 4.0'
 
 end
 
