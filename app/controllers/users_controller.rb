@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
       redirect_to path
     else
-      flash.now[:notice] = @user.errors.full_messages
+      flash.now[:error] = @user.errors.full_messages
       render :new
     end
   end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Your profile has been updated."
       redirect_to user_path(@user)
     else
-      flash.now[:notice] = @user.errors.full_messages
+      flash.now[:error] = @user.errors.full_messages
       render :edit
     end
   end
