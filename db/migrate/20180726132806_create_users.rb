@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :age
       t.text :skills
       t.string :password_digest
+      t.timestamps
     end
   end
 end
