@@ -25,7 +25,7 @@ describe UsersController do
 
       context "given the redirect_back param is present" do
         it "redirects back to the given path" do
-          org = Organization.create
+          org = create(:organization)
           post(:create, params: {user: params, redirect_back: "/organizations/#{org.id}"})
           expect(response).to redirect_to organization_path(org)
         end
