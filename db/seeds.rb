@@ -12,6 +12,17 @@
     email: Faker::Internet.email, 
     phone: Faker::PhoneNumber.cell_phone, 
     description: Faker::Lorem.sentence,
-    bio: Faker::Lorem.paragraph(4)
+    bio: Faker::Lorem.paragraph(4),
+    address: Faker::Address.full_address
+  )
+end
+
+100.times do 
+  Location.create(
+    long: Faker::Address.longitude.round(4),
+    lat: Faker::Address.latitude.round(4),
+    country: Faker::Address.country, 
+    state: Faker::Address.state, 
+    city: Faker::Address.city
   )
 end
