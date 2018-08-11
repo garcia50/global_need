@@ -7,11 +7,11 @@ describe "As a visitor, when I visit the organization index page" do
 
       visit root_path
       click_on "Global Need"
-      expect(current_path).to eq organizations_path
+      expect(page).to have_current_path(organizations_path)
       
       visit organizations_path
       first('.panel > a').click
-      expect(current_path).to eq organization_path(org)    
+      expect(page).to have_current_path(organization_path(org))    
     end
 
     it "should have organization content" do
@@ -25,9 +25,6 @@ describe "As a visitor, when I visit the organization index page" do
       expect(page).to have_content('people')
       expect(page).to have_button('Sign In To Contact Us')
     end
-
-    it ""
-
   end
 end
 
