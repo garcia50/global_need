@@ -37,9 +37,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-sass'
-gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
-gem 'database_cleaner'
-gem 'capybara', '~> 2.13'
 
 
 group :test do 
@@ -52,6 +49,9 @@ group :development, :test do
   gem 'pry'
   gem 'faker', '~> 1.9', '>= 1.9.1'
   gem 'factory_bot_rails', '~> 4.0'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.13'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 
 end
 
