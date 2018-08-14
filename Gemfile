@@ -52,7 +52,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara', '~> 2.13'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
-
+  gem 'launchy'
 end
 
 group :development do
