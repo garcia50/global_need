@@ -12,6 +12,25 @@ describe "As an unauthorized visitor" do
 
         expect(current_path).to eq login_path
       end
+
+      it "I can log in using my credentials" do
+        org = create(:organization)
+        user = create(:user)
+
+        visit organization_path(org)
+        click_on "Sign In To Contact Us"
+        expect(current_path).to eq login_path
+
+        fill_in('Email', with: "keke1@aol.com")
+        fill_in('Password', with: "pass")
+
+        click_button "Login"
+        expect(current_path).to eq organization_path(org)
+
+      end
+    end
+  end
+
       org = create(:organization)
 
       visit organization_path(org)
