@@ -56,8 +56,30 @@ describe "As an unauthorized visitor" do
       expect(current_path).to eq root_path
       expect(User.last.first_name).to eq 'jeff' 
     end
+
+    it "redirects me back to organization show page" do
+      org = create(:organization)
+
+      visit organization_path(org)
+      click_on "Sign In To Contact Us"
       expect(current_path).to eq login_path
-    
+
+      click_on "SignUp"
+
+      expect(current_path).to eq new_user_path
+
+
+      fill_in('first name', with: "jeff")
+      fill_in('last name', with: "si")
+      fill_in('email', with: "jeff@mynameis.com")
+      fill_in('password', with: "pass")
+      fill_in('confirm password', with: "pass")
+
+      click_on "Submit"
+
+      expect(current_path).to eq organization_path(org)
     end
   end
 end
+
+
