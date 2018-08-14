@@ -1,5 +1,4 @@
 FactoryBot.define do 
-
   factory :organization do 
     sequence(:name)        { |n| "Red Cross#{n}" }
     sequence(:description) { |n| "help the needy#{n}" }
@@ -19,5 +18,4 @@ FactoryBot.define do
     sequence(:skills)     { |n| "walking#{n}" }
     password "pass"
   end
-
 end
