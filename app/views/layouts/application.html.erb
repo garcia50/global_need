@@ -14,8 +14,11 @@
   </head>
 
   <body>
-    <%= render "navigation/nav" %>
-    
+
+    <% unless controller_name == "sessions" %>
+      <%= render "navigation/nav" %>
+    <% end %>
+
     <div class="flash">
       <% flash.each do |type, message| %>
         <%= format_error_messages(type, message).html_safe %>
