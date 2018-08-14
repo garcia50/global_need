@@ -11,13 +11,13 @@ FactoryBot.define do
   end
 
   factory :user do
-    sequence(:first_name) { |n| "Mary#{n}" }
+    sequence(:first_name) { |n| "keke#{n}" }
     sequence(:last_name)  { |n| "Davenport#{n}" }
-    sequence(:email)      { |n| "maryDavenportNo#{n}@gmail.com" }
+    sequence(:email)      { |n| "keke#{n}@aol.com" }
     sequence(:phone)      { |n| "#{n}000000" }
     sequence(:sex)        { |n| "m#{n}f" }
     sequence(:skills)     { |n| "walking#{n}" }
-    sequence(:password)   { |n| "password#{n}" }
+    password "pass"
   end
 
 end
