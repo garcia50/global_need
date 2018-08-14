@@ -15,7 +15,7 @@ describe "As a visitor, when I visit the organization index page" do
     end
 
     it "should have organization content" do
-      org = create(:organization)
+      org = create(:organization, name: 'Red Cross3')
 
       visit organizations_path
       first('.panel > a').click
