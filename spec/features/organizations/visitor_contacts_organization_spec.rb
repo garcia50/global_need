@@ -42,7 +42,20 @@ describe "As an unauthorized visitor" do
       expect(current_path).to eq new_user_path
     end
 
+    it "I can create a new account" do
+      visit new_user_path
 
+      fill_in('first name', with: "jeff")
+      fill_in('last name', with: "si")
+      fill_in('email', with: "jeff@mynameis.com")
+      fill_in('password', with: "pass")
+      fill_in('confirm password', with: "pass")
+
+      click_on "Submit"
+
+      expect(current_path).to eq root_path
+      expect(User.last.first_name).to eq 'jeff' 
+    end
       expect(current_path).to eq login_path
     
     end
