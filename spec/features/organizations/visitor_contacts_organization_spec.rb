@@ -31,11 +31,17 @@ describe "As an unauthorized visitor" do
     end
   end
 
+  describe "I can successfully signup and make new account" do
+    it "redirects to create account page" do
       org = create(:organization)
+      
+      visit login_path
 
-      visit organization_path(org)
+      click_on "SignUp"
 
-      click_on "Sign In To Contact Us"
+      expect(current_path).to eq new_user_path
+    end
+
 
       expect(current_path).to eq login_path
     
