@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-sass'
+gem 'faker', '~> 1.9', '>= 1.9.1'
 
 
 group :test do 
@@ -47,7 +48,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
-  gem 'faker', '~> 1.9', '>= 1.9.1'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'database_cleaner'
   gem 'capybara', '~> 2.13'
