@@ -1,5 +1,4 @@
 class Location < ApplicationRecord
-  has_and_belongs_to_many :organizations
-  has_many   :org_locs
-  has_many   :organizations, through: :org_locs
+  has_many :locations_organizations
+  has_many :organizations, through: :locations_organizations
 end
