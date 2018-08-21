@@ -5,6 +5,15 @@
     <h2>Who We Are</h2>
     <h2><%= @organization.bio %></h2>
     <br>
+    <div>
+      <h2>Our Locations Around The World</h2>
+      <% @organization.locations.each do |orgloc| %>
+        <h3>Country: <%= orgloc.country %></h3>
+        <h3>State: <%= orgloc.state %></h3>
+        <h3>City: <%= orgloc.city %></h3>
+      <% end %>
+    </div>
+    <br>
     <% if current_user %>
       Email: <%= @organization.email %>
       <br>
