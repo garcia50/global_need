@@ -38,7 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-sass'
 gem 'faker', '~> 1.9', '>= 1.9.1'
-
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :test do 
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
