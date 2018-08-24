@@ -9,11 +9,12 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    # @locations = @organization.locations
+    @locations = @organization.locations
+    @loca = @locations.first.country
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.lat
       marker.lng location.long
     end
+    # @hey = [{:lat=>36.7783, :lng=>-119.4179}]
   end
-
 end
