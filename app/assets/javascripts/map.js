@@ -1,3 +1,8 @@
+var app = "<%= @locations.first.state.to_json %>"
+var app1 = "<%= @loca.to_json %>"
+var heyy = "<%= @hey%>"
+var loca = "<%= @loca %>"
+
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   var geocoder =  new google.maps.Geocoder();
