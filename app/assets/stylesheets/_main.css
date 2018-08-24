@@ -136,6 +136,16 @@ footer {
   width: 100%;
 }
 
+#map {
+   margin: 0;
+   padding: 0;
+   height: 400px;
+   max-width: 80%;
+}
+#map img {
+   max-width: none !important;
+}
+
 
 /*@media screen and (max-width: 1300px)
 {
