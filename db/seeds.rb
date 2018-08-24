@@ -12,6 +12,7 @@ User.destroy_all
 
 org = []
 loc = []
+loca = []
 
 100.times do 
   org << Organization.create(
@@ -34,9 +35,26 @@ end
   )
 end
 
+100.times do 
+  loca << Location.create(
+    long: Faker::Address.longitude.round(4),
+    lat: Faker::Address.latitude.round(4),
+    country: Faker::Address.country, 
+    state: Faker::Address.state, 
+    city: Faker::Address.city
+  )
+end
+
 org.each_with_index do |org, index|
   LocationsOrganization.create(
     organization_id: org.id,
     location_id: loc[index].id
+  )
+end
+
+org.each_with_index do |org, index|
+  LocationsOrganization.create(
+    organization_id: org.id,
+    location_id: loca[index].id
   )
 end
