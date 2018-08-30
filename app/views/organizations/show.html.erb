@@ -1,10 +1,3 @@
-<script type="text/javascript">
-  // var app = "<%= @locations.first.state.to_json %>"
-  // var app1 = "<%= @loca.to_json %>"
-  var country = "<%= @country %>"
-</script>
-
-
 <div class="container org-show">
   <h1><%= @organization.name %></h1>
   <br>
@@ -30,33 +23,12 @@
     <% end %>
   </div>
 
- <div style='width: 800px;'>
-    <div id="map" style='width: 800px; height: 400px;'></div>
+  <div style='width: 800px;'>
+    <div id="map" data-country="<%= @country %>" style='width: 800px; height: 400px;'></div>
   </div> 
- 
-  <script type="text/javascript">
-  
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    var geocoder =  new google.maps.Geocoder();
-      geocoder.geocode( { 'address': country}, function(results, status) {
-        r1 = results[0].geometry.location.lat();
-        r2 = results[0].geometry.location.lng();
-        
-      markers = handler.addMarkers([{"lat":r1,"lng":r2}]);
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      // handler.getMap().setZoom(5);
-      });
-    });
-  </script> 
 
-  <!-- <div id="map"></div> -->
-
-
-<br>
-
+  <br>
 </div>
+
 <br>
 <br>
