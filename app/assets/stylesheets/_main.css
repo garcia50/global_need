@@ -140,12 +140,8 @@ footer {
    margin: 0;
    padding: 0;
    height: 400px;
-   max-width: 80%;
+   max-width: 800px;
 }
-#map img {
-   max-width: none !important;
-}
-
 
 /*@media screen and (max-width: 1300px)
 {
