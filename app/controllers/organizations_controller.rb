@@ -11,6 +11,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     @locations = @organization.locations
     @country = @locations.first.country
+    @state = @locations.first.state
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.lat
       marker.lng location.long
