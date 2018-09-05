@@ -8,7 +8,7 @@
 LocationsOrganization.destroy_all
 Organization.destroy_all
 Location.destroy_all
-User.destroy_all
+# User.destroy_all
 
 org = []
 loc = []
@@ -25,7 +25,7 @@ loca = []
   )
 end
 
-100.times do 
+300.times do 
   loc << Location.create(
     long: Faker::Address.longitude.round(4),
     lat: Faker::Address.latitude.round(4),
@@ -35,21 +35,8 @@ end
   )
 end
 
-100.times do 
-  loca << Location.create(
-    long: Faker::Address.longitude.round(4),
-    lat: Faker::Address.latitude.round(4),
-    country: Faker::Address.country, 
-    state: Faker::Address.state, 
-    city: Faker::Address.city
-  )
-end
-
-org.each_with_index do |org, index|
-  LocationsOrganization.create(
-    organization_id: org.id,
-    location_id: loc[index].id
-  )
+until loc.empty?
+  
 end
 
 org.each_with_index do |org, index|
@@ -58,3 +45,50 @@ org.each_with_index do |org, index|
     location_id: loca[index].id
   )
 end
+
+# 100.times do 
+#   loc << Location.create(
+#     long: Faker::Address.longitude.round(4),
+#     lat: Faker::Address.latitude.round(4),
+#     country: Faker::Address.country, 
+#     state: Faker::Address.state, 
+#     city: Faker::Address.city
+#   )
+# end
+
+# 100.times do 
+#   loca << Location.create(
+#     long: Faker::Address.longitude.round(4),
+#     lat: Faker::Address.latitude.round(4),
+#     country: Faker::Address.country, 
+#     state: Faker::Address.state, 
+#     city: Faker::Address.city
+#   )
+# end
+
+# org.each_with_index do |org, index|
+#   LocationsOrganization.create(
+#     organization_id: org.id,
+#     location_id: loc[index].id
+#   )
+# end
+
+# org.each_with_index do |org, index|
+#   LocationsOrganization.create(
+#     organization_id: org.id,
+#     location_id: loca[index].id
+#   )
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
