@@ -1,7 +1,7 @@
 <div class="nav">
-  <% if current_user %>
+  <% if current_account %>
     <div class="globe"><%= link_to image_tag("white-globe.png", width: 45, height: 45), root_path %></div>
-    <%= link_to image_tag("user-icon.png", border: 0, width: 35, height: 35), edit_user_path(current_user), class: "user-icon" %>
+    <%= link_to image_tag("user-icon.png", border: 0, width: 35, height: 35), edit_user_path(current_account), class: "user-icon" %>
   <% else %>
     <div class="login">
       <%= link_to "login", login_path %> /
