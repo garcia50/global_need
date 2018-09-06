@@ -1,0 +1,21 @@
+<div class="new-account">
+  <div class="login">
+    <h2>Create An Organization Account</h2>
+    <br>
+    <%= form_for @organization,:html=>{:class => 'login-form'} do |f| %>  
+      <%= f.label :name, "organization name" %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email, "email"  %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :password, "password"  %>
+      <%= f.password_field :password, class: "form-control" %>
+    
+      <%= f.label :password_confirmation, "confirm password" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <br>
+      <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+    <% end %>
+  </div>
+</div>
