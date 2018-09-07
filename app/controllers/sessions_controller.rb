@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:account_id] = @account.id
       flash.now[:notice] = "Logged in as #{@account.email}"
       
-      path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@account)
+      path = params[:redirect_back].present? ? params[:redirect_back] : account_path(@account) #user_path(@account)
       
       redirect_to path
     else
@@ -26,8 +26,12 @@ class SessionsController < ApplicationController
 
   private
 
-  def method_name
-    
+  def account_path
+    if @account.class == User
+      user_path(@account)
+    elsif @account.class == Organization
+      organization_path(@account)
+    end
   end
 
 end

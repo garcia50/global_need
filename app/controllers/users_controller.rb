@@ -24,7 +24,6 @@ class UsersController < ApplicationController
       # path = params[:redirect_back] || user_path(@user)
       path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@account)
 
-
       redirect_to path
     else
       flash.now[:error] = @user.errors.full_messages
