@@ -4,13 +4,11 @@ class SessionsController < ApplicationController
   def new;end
 
   def create 
-    @account = (User.find_by(email: params[:email]) || Organization.find_by(email: params[:email]))
-    if @account && @account.authenticate(params[:password])
-      session[:account_type] = @account.class.to_s
-      session[:account_id] = @account.id
-      flash.now[:notice] = "Logged in as #{@account.email}"
-      
-      path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@account)
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      flash.now[:notice] = "Logged in as #{current_user.email}"
+      path = params[:redirect_back] || user_path(@user)
       
       redirect_to path
     else
@@ -22,12 +20,6 @@ class SessionsController < ApplicationController
   def destroy
     session.destroy
     redirect_to root_path
-  end
-
-  private
-
-  def method_name
-    
   end
 
 end
