@@ -1,0 +1,35 @@
+<div class="new-account">
+  <div class="login">
+    <h2>Create Account</h2>
+    <br>
+    <%= form_for @user,:html=>{:class => 'login-form'} do |f| %>  
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name, class: "form-control" %>
+
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name, class: "form-control" %>
+    
+      <%= f.label :email, "Email" %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.fields_for @organization,:html=>{:class => 'login-form'} do |org_f| %>
+        <%= org_f.label :name, "Organization Name" %>
+        <%= org_f.text_field :name, class: "form-control" %>
+      <% end %>
+
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, class: "form-control" %>
+    
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <br>
+      <%= hidden_field_tag('redirect_back', params[:redirect_back]) %>
+      <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+    <% end %>
+
+    <br>
+    <br>
+    <br>
+    <%= link_to "<- Back", root_path %>
+  </div>
+</div>
