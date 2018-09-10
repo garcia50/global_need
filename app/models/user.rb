@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates :password, confirmation: { case_senstive: true }
 
-  has_many :organzations 
+  has_one :organzation
 end
