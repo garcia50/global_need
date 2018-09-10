@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome #{current_user.first_name}"
-      path = params[:redirect_back] || user_path(@user)
+      path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@user)
 
       redirect_to path
     else

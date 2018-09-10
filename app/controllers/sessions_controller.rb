@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash.now[:notice] = "Logged in as #{current_user.email}"
-      path = params[:redirect_back] || user_path(@user)
+      path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@user)
       
       redirect_to path
     else
@@ -21,5 +21,4 @@ class SessionsController < ApplicationController
     session.destroy
     redirect_to root_path
   end
-
 end
