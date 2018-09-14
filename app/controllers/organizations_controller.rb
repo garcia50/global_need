@@ -1,4 +1,6 @@
 class OrganizationsController < ApplicationController
+  #before action 1. Is the current_user an org.admin? AND is the org of that user the same as the org that their trying to go to in the edit
+
   def index
     if params[:search]
       @organizations = Organization.search(params[:search]).paginate(page: params[:page])
