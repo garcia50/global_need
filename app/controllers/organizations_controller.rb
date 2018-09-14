@@ -19,7 +19,37 @@ class OrganizationsController < ApplicationController
       marker.lng location.long
     end
   end
+
+  def edit
+    @org = Organization.find(params[:id])
+    @user = User.find(@org.user_id)
+  end
+
+  def update
+    @org = Organization.find(params[:id])
+    if @org.update(org_params)
+      flash[:notice] = "Your Organizationhas been updated."
+      redirect_to organization_path(@org)
+    else
+      flash.now[:error] = @org.errors.full_messages
+      render :edit
+    end
+  end
+
+  private
+
+  def org_params
+    params.require(:organization).permit(
+      :name,
+      :email,
+      :phone,
+      :description,
+      :bio,
+      :address
+    )
+  end
 end
+
 
 
 
