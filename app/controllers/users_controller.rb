@@ -27,6 +27,11 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "Welcome #{current_user.first_name}"
       path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@user)
+      #if @org is present then take redirect them to the edit org view
+    if params[:user][:organization].present?
+      require 'pry'; binding.pry
+      path = edit_organization(@org)
+    end
 
       redirect_to path
     else
@@ -78,12 +83,6 @@ class UsersController < ApplicationController
     end
   end
 end
-
-
-
-
-
-
 
 
 
