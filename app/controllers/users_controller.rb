@@ -28,11 +28,9 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome #{current_user.first_name}"
       path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@user)
       #if @org is present then take redirect them to the edit org view
-    if params[:user][:organization].present?
-      require 'pry'; binding.pry
-      path = edit_organization(@org)
-    end
-
+      if params[:user][:organization].present?
+        path = edit_organization_path(@org)
+      end
       redirect_to path
     else
       flash.now[:error] = @user.errors.full_messages
