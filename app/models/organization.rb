@@ -1,5 +1,5 @@
 class Organization < ApplicationRecord
-  validates_presence_of :name, :email
+  validates_presence_of :name, :email, :address
   validates_uniqueness_of :name
 
   has_many :locations_organizations
