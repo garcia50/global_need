@@ -7,11 +7,7 @@
     <br>
     <div>
       <h2>Our Locations Around The World</h2>
-      <% @organization.locations.each do |orgloc| %>
-        <h3>Country: <%= orgloc.country %></h3>
-        <h3>State: <%= orgloc.state %></h3>
-        <h3>City: <%= orgloc.city %></h3>
-      <% end %>
+      
     </div>
     <br>
     <% if current_user %>
@@ -23,8 +19,8 @@
     <% end %>
   </div>
 
-  <% if @country || @state || @address %>
-    <div id="map" data-country="<%= @country %>" data-state="<%= @state %>" data-city="<%= @city %>" data-headquarters="<%= @address %>"></div>
+  <% if @locations %>
+    <div id="map" data-locations="<%= @locations %>" data-hq="<%= @org_hq %>"></div>
   <% end %>
 
   <br>
