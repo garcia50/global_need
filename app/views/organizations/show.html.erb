@@ -23,8 +23,8 @@
     <% end %>
   </div>
 
-  <% if @country || @state %>
-    <div id="map" data-country="<%= @country %>" data-state="<%= @state %>" data-offices="<%= @address %>"></div>
+  <% if @country || @state || @address %>
+    <div id="map" data-country="<%= @country %>" data-state="<%= @state %>" data-city="<%= @city %>" data-headquarters="<%= @address %>"></div>
   <% end %>
 
   <br>
