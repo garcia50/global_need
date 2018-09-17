@@ -11,22 +11,19 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-
-    offices = @organization.address.present? ? @organization.address : nil
-      @address = Gmaps4rails.build_markers(offices) do |address, marker|
-        marker.lat address.lat
-        marker.lng address.long
-      end
+    @address = @organization.address
 
     if @organization.locations.present?
       @locations = @organization.locations
       @country = @locations.first.country
       @state = @locations.first.state
-      @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-        marker.lat location.lat
-        marker.lng location.long
-      end
+      @city = @locations.first.city
+      # @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      #   marker.lat location.lat
+      #   marker.lng location.long
+      # end
     end
+
   end
 
   def edit
