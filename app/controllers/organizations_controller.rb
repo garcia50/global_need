@@ -11,19 +11,12 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    @address = @organization.address
+    @org_hq = @organization.address
 
     if @organization.locations.present?
-      @locations = @organization.locations
-      @country = @locations.first.country
-      @state = @locations.first.state
-      @city = @locations.first.city
-      # @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-      #   marker.lat location.lat
-      #   marker.lng location.long
-      # end
+      @locations = @organization.locations.to_json
     end
-
+require 'pry'; binding.pry
   end
 
   def edit
