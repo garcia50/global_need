@@ -1,19 +1,16 @@
 $(document).on("turbolinks:load", function() {
   var map = document.getElementById('map')
-  var country = map.dataset.country
-  var state = map.dataset.state
-  var city = map.dataset.city
-  var hq = map.dataset.headquarters
+  var hq = map.dataset.hq
 
-  var locations = [hq]
-
+  var data = map.dataset.locations
+  var locations = JSON.parse(data)
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    var geocoder =  new google.maps.Geocoder();
+  var geocoder =  new google.maps.Geocoder();
 
 
   locations.map( function(location) {
-      geocoder.geocode( { 'address': location }, function(results, status) {
+    geocoder.geocode( { 'address': location.city }, function(results, status) {
       r1 = results[0].geometry.location.lat();
       r2 = results[0].geometry.location.lng();
 
@@ -28,6 +25,14 @@ $(document).on("turbolinks:load", function() {
     });
   });
   
+  geocoder.geocode( { 'address': hq }, function(results, status) {
+    r1 = results[0].geometry.location.lat();
+    r2 = results[0].geometry.location.lng();
+
+    markers = handler.addMarkers([{"lat":r1,"lng":r2}]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
   
 
     // geocoder.geocode( { 'address': hq }, function(results, status) {
