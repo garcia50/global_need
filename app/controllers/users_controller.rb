@@ -32,15 +32,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @organization = current_user.organization
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
+    @organization = current_user.organization
+    if current_user.update(user_params)
       flash[:notice] = "Your profile has been updated."
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
-      flash.now[:error] = @user.errors.full_messages
+      flash.now[:error] = current_user.errors.full_messages
       render :edit
     end
   end
@@ -73,7 +74,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
-
-
-
