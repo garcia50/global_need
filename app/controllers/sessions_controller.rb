@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  before_action #:set_redirect_path, only: [:create]
-
   def new;end
 
   def create 
