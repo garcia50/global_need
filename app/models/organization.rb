@@ -10,4 +10,8 @@ class Organization < ApplicationRecord
   def self.search(search)
     where("name iLIKE ?", "%#{search}%") 
   end
+
+  def is_user?
+    user.present?
+  end
 end
