@@ -1,9 +1,56 @@
 <div class="edit-account">
-  <% if current_user %>
+  <% if current_user && current_user.is_org_admin? %>
     <div class="text-center">
       <h2>Modify Account</h2>
       <br>
-      <%= form_for @user,:html=>{:class => 'login-form'} do |f| %>  
+      <%= form_for current_user,:html=>{:class => 'login-form'} do |f| %>  
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control" %>
+
+        <h2>Organization Info</h2>
+        <%= f.fields_for @organization,:html=>{:class => 'login-form'} do |org_f| %>
+          <%= org_f.label :name, "Organization Name" %>
+          <%= org_f.text_field :name, class: "form-control" %>
+
+          <%= org_f.label :email %>
+          <%= org_f.email_field :email, class: "form-control" %>
+
+          <%= org_f.label :phone %>
+          <%= org_f.text_field :phone, class: "form-control" %>
+
+          <%= org_f.label :description %>
+          <%= org_f.text_area :description, class: "form-control" %>
+
+          <%= org_f.label :bio %>
+          <%= org_f.text_area :bio, class: "form-control" %>
+
+          <%= org_f.label :address %>
+          <%= org_f.text_field :address, class: "form-control" %>
+        <% end %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <br>
+        <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+      <% end %>
+    </div>
+  <% elsif current_user %>
+    <div class="text-center">
+      <h2>Modify Account</h2>
+      <br>
+      <%= form_for current_user,:html=>{:class => 'login-form'} do |f| %>  
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control" %>
 
@@ -42,4 +89,3 @@
   <br>  
   <%= link_to "Logout", logout_path, method: :delete %>
 </div>
-
