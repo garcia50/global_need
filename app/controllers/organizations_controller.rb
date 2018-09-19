@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   #before action 1. Is the current_user an org.admin? AND is the org of that user the same as the org that their trying to go to in the edit
+  before_action :authorize_org_user, only: [:edit, :update]
 
   def index
     if params[:search]
@@ -52,3 +53,10 @@ end
 
 
 
+  def authorize_org_user
+    unless current_user.organization.try(:id) == params[:id].to_i
+      redirect_to root_path
+      flash[:notice] = "Opps!! You do not have access to this page."
+    end
+  end
+end
