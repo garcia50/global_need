@@ -11,4 +11,7 @@ class User < ApplicationRecord
     organization.present?
   end
 
+  def organization
+    @organization ||= Organization.find_by(user_id: id)
+  end
 end
