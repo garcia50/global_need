@@ -6,4 +6,9 @@ class User < ApplicationRecord
   validates :password, confirmation: { case_senstive: true }
 
   has_one :organzation
+
+  def is_org_admin?
+    organization.present?
+  end
+
 end
