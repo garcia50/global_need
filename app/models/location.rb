@@ -12,6 +12,3 @@ class Location < ApplicationRecord
     [country, state, city].compact.join(', ')
   end
 end
-
-# org = Organization.find(121)
-#  loc = Location.create(country: "United States", state: "Georgia", city: "Los Angeles" )
