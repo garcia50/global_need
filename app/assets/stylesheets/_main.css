@@ -106,7 +106,8 @@ html, body {
   align-items: center;
   top: 0;
   margin-bottom: 200px;
-  padding-top: 10%;
+  /*padding-top: 10%;*/
+  margin-top: 15%
 }
 
 .org-index {
