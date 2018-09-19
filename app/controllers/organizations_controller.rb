@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   #before action 1. Is the current_user an org.admin? AND is the org of that user the same as the org that their trying to go to in the edit
+  before_action :check_user, except: [:new, :create, :org]
   before_action :authorize_org_user, only: [:edit, :update]
 
   def index
