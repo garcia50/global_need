@@ -2,14 +2,6 @@ class UsersController < ApplicationController
   before_action :check_user, except: [:new, :create, :org]
   before_action :authorize_user, only: [:update]
 
-  # def index
-  #   if current_user #&& current_user.admin?
-  #     @users = User.all 
-  #   else
-  #     redirect_to root_path
-  #   end
-  # end
-
   def show;end
 
   def new
