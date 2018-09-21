@@ -2,13 +2,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "welcome#index"
 
-  resources :organizations
-  resources :users do
+  resources :users, param: :slug do
     collection do
       get 'org'
     end
   end
-
+  resources :organizations
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
