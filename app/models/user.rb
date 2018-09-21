@@ -6,6 +6,11 @@ class User < ApplicationRecord
   validates :password, confirmation: { case_senstive: true }
 
   has_one :organzation
+  before_save :generate_slug
+
+  def generate_slug
+    self.slug = first_name.parameterize if first_name
+  end
 
   def is_org_admin?
     organization.present?
@@ -14,4 +19,5 @@ class User < ApplicationRecord
   def organization
     @organization ||= Organization.find_by(user_id: id)
   end
+
 end
