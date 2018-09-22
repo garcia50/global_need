@@ -1,0 +1,20 @@
+<div class="org-index text-center">
+  <h1><%=@org.name%></h1>
+  <h3>Locations</h13>
+  <br>
+  <br>
+  <div class="container org-container">
+    <br>
+    <ul>
+      <% @locations.each do |loc| %>
+        <div class="col-lg-4 col-md-3">
+          <div class="panel">
+            <%= link_to edit_location_path(loc) do %>
+              <div id="loc-name"><%= loc.city %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>  
