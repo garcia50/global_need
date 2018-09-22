@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       get 'org'
     end
   end
-  resources :organizations
+  resources :organizations, shallow: true do
+    resources :locations
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
