@@ -1,0 +1,26 @@
+<div class="edit-locations">
+  <% if current_user %>
+    <div class="text-center">
+      <h2>Modify Location</h2>
+      <br>
+      <%= form_for @loc,:html=>{:class => 'login-form'} do |f| %>  
+        <%= f.label :country %>
+        <%= f.text_area :country, class: "form-control" %>
+
+        <%= f.label :state %>
+        <%= f.text_field :state, class: "form-control" %>
+
+        <%= f.label :city %>
+        <%= f.text_field :city, class: "form-control" %>
+
+        <%= f.label :lat %>
+        <%= f.text_field :lat, class: "form-control" %>
+      
+        <%= f.label :long %>
+        <%= f.text_field :long, class: "form-control" %>
+        <br>
+        <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+      <% end %>
+    </div>
+  <% end %>  
+</div>
