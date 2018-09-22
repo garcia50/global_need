@@ -132,6 +132,19 @@ html, body {
   margin-top: 15%
 }
 
+.edit-locations {
+  text-align: -webkit-center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  /*margin-bottom: 200px;*/
+  /*padding-top: 10%;*/
+  /*margin-top: 15%*/
+}
+
 .org-index {
   margin-top: 6%;
 }
