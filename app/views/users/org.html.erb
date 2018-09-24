@@ -1,7 +1,7 @@
 <div class="new-account">
   <div class="login">
-    <h2>Create Account</h2>
     <br>
+    <h2>Create Account</h2>
     <%= form_for @user,:html=>{:class => 'login-form'} do |f| %>  
       <%= f.label :first_name, "First Name" %>
       <%= f.text_field :first_name, class: "form-control" %>
@@ -11,12 +11,20 @@
     
       <%= f.label :email, "Email" %>
       <%= f.email_field :email, class: "form-control" %>
-
+<br>
+<br>
       <%= f.fields_for @organization,:html=>{:class => 'login-form'} do |org_f| %>
-        <%= org_f.label :name, "Organization Name" %>
+        <%= org_f.label :name, "Org Name" %>
         <%= org_f.text_field :name, class: "form-control" %>
-      <% end %>
 
+        <%= org_f.label :email, "Org Email" %>
+        <%= org_f.text_field :email, class: "form-control" %>
+
+        <%= org_f.label :address, "Org Address" %>
+        <%= org_f.text_field :address, class: "form-control" %>
+      <% end %>
+<br>
+<br>
       <%= f.label :password, "Password" %>
       <%= f.password_field :password, class: "form-control" %>
     
