@@ -2,7 +2,7 @@
   <div class="location">
     <h2>Create A Location</h2>
     <br>
-    <%= form_for @location, url: organization_locations_path(@org),:html=>{:class => 'login-form'} do |f| %>  
+    <%= form_for [:organization, @location], :html=>{:class => 'login-form'} do |f| %>  
       <%= f.label :long, "long" %>
       <%= f.text_field :long, class: "form-control" %>
 
