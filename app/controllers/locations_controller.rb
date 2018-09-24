@@ -4,6 +4,11 @@ class LocationsController < ApplicationController
     @locations = @org.locations
   end
 
+  def new 
+    @org = current_user.organization
+    @location = @org.locations.new 
+  end
+
   def edit
     @loc = Location.find(params[:id])
   end
