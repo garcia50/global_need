@@ -1,0 +1,24 @@
+<div class="new-account">
+  <div class="login">
+    <h2>Create A Location</h2>
+    <br>
+    <%= form_for @location, url: organization_locations_path(@org),:html=>{:class => 'login-form'} do |f| %>  
+      <%= f.label :long, "long" %>
+      <%= f.text_field :long, class: "form-control" %>
+
+      <%= f.label :lat, "lat"  %>
+      <%= f.text_field :lat, class: "form-control" %>
+
+      <%= f.label :country, "country"  %>
+      <%= f.text_field :country, class: "form-control" %>
+
+      <%= f.label :state, "state"  %>
+      <%= f.text_field :state, class: "form-control" %>
+
+      <%= f.label :city, "city"  %>
+      <%= f.text_field :city, class: "form-control" %>
+      <br>
+      <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
+    <% end %>
+  </div>
+</div>
