@@ -9,6 +9,23 @@ class LocationsController < ApplicationController
     @location = @org.locations.new 
   end
 
+  def create
+    @org = current_user.organization
+    @location = Location.new(location_params)
+
+    if @location.save
+      LocationsOrganization.create(
+        organization_id: @org.id,
+        location_id: @location.id
+      )
+      flash[:notice] = "You've successfully added a location to your organization."
+      redirect_to organization_locations_path(@org)
+    else
+      flash.now[:error] =  @location.errors.full_messages
+      render :new
+    end
+  end
+
   def edit
     @loc = Location.find(params[:id])
   end
