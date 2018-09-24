@@ -43,6 +43,12 @@ class LocationsController < ApplicationController
     end
   end
 
+  def destroy
+    loc = Location.find(params[:id])
+    loc.destroy
+    redirect_to organization_locations_path(current_user.organization)
+  end
+
   private
 
   def location_params
