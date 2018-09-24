@@ -12,7 +12,6 @@ class LocationsController < ApplicationController
   def create
     @org = current_user.organization
     @location = Location.new(location_params)
-
     if @location.save
       LocationsOrganization.create(
         organization_id: @org.id,
