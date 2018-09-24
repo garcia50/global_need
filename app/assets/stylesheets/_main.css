@@ -12,10 +12,6 @@ html, body {
   color: #42e5f4;
 }
 
-.login {
-  
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -87,7 +83,25 @@ html, body {
   align-items: center;
 }
 
+.location-form {
+  text-align: -webkit-center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .new-account {
+  text-align: -webkit-center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-location {
   text-align: -webkit-center;
   height: 100%;
   display: flex;
@@ -156,6 +170,14 @@ html, body {
 .org-show {
   text-align: -webkit-center;
   margin-top: 6%;
+}
+
+.loc-index {
+  margin-top: 6%;
+}
+
+.loc-index h1 {
+  margin-bottom: 1%;
 }
 
 .pagination{ 
