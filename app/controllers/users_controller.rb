@@ -17,10 +17,10 @@ class UsersController < ApplicationController
       path = params[:redirect_back].present? ? params[:redirect_back] : user_path(@user)
       if params[:user][:organization].present?
         @org = Organization.create(name: params[:user][:organization][:name],
-                                 email: params[:user][:organization][:email],
-                                 address: params[:user][:organization][:address],
-                                 user: @user
-                                )
+                                   email: params[:user][:organization][:email],
+                                   address: params[:user][:organization][:address],
+                                   user: @user
+                                  )
         path = edit_organization_path(@org)
       end
       redirect_to path
