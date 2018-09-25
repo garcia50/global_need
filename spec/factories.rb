@@ -18,4 +18,13 @@ FactoryBot.define do
     sequence(:skills)     { |n| "walking#{n}" }
     password "pass"
   end
+
+  factory :location do
+    sequence(:long)       { |n| "38.7306#{n}".to_i }
+    sequence(:lat)        { |n| "98.2281#{n}".to_i }
+    sequence(:country)    { |n| "keke#{n}@aol.com" }
+    sequence(:state)      { |n| "#{n}000000" }
+    sequence(:city)       { |n| "m#{n}f" }
+  end
 end
+
