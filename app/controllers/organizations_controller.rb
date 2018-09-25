@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :check_user, except: [:new, :create, :org]
+  before_action :check_user, only: [:create, :update, :org]
   before_action :authorize_org_user, only: [:edit, :update]
 
   def index
