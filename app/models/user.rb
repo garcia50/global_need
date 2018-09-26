@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: users
+#
+# id              :bigint
+# first_name      :string     
+# last_name       :string     
+# email           :string     
+# phone           :string     
+# sex             :string     
+# age             :string     
+# skills          :text       
+# password_digest :string     
+# created_at      :datetime 
+# updated_at      :datetime 
+# slug            :string     
+#
+
 class User < ApplicationRecord
   has_secure_password
 
