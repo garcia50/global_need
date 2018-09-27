@@ -52,6 +52,11 @@ describe UsersController do
         expect(response).to render_template(:new)
       end
     end
+
+    context "given a successful user org account" do 
+      
+
+    end
   end
 
   describe "PUT #update" do
@@ -72,6 +77,7 @@ describe UsersController do
         before do
           allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         end
+
         it "renders a success message" do
           patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
           expect(flash[:notice]).to be_present
@@ -104,11 +110,6 @@ describe UsersController do
     end
   end
 end
-
-
-
-
-
 
 
 
