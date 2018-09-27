@@ -24,7 +24,7 @@ class User < ApplicationRecord
   validates :password, confirmation: { case_senstive: true }
 
   has_one :organzation
-  before_save :generate_slug
+  # before_save :generate_slug
 
   def generate_slug
     self.slug = first_name.parameterize if first_name
