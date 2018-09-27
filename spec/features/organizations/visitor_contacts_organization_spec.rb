@@ -20,7 +20,7 @@ describe "As an unauthorized visitor" do
         click_on "Sign In To Contact Us"
         expect(current_path).to eq login_path
 
-        fill_in('Email', with: "keke1@aol.com")
+        fill_in('Email', with: "keke3@aol.com")
         fill_in('Password', with: "pass")
 
         click_button "Login"
