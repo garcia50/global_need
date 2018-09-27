@@ -89,7 +89,7 @@ describe UsersController do
         end
 
         it "renders an error message" do
-          patch(:update, params: {id: user.id, user: {first_name: "dav"}})
+          patch(:update, params: {id: user.id, user: {first_name: nil}})
           expect(flash[:error]).to be_present
         end
       end
