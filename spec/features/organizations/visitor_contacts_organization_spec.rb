@@ -51,8 +51,8 @@ describe "As an unauthorized visitor" do
 
       click_on "Submit"
 
-      expect(current_path).to eq root_path
-      expect(User.last.first_name).to eq 'jeff' 
+      expect(current_path).to eq user_path(User.last.id)
+      expect(User.last.first_name).to eq 'jeff'
     end
 
     it "redirects me back to organization show page" do
