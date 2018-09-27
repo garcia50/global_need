@@ -25,7 +25,6 @@ describe "As an unauthorized visitor" do
 
         click_button "Login"
         expect(current_path).to eq organization_path(org)
-
       end
     end
   end
@@ -44,11 +43,11 @@ describe "As an unauthorized visitor" do
     it "I can create a new account" do
       visit new_user_path
 
-      fill_in('first name', with: "jeff")
-      fill_in('last name', with: "si")
-      fill_in('email', with: "jeff@mynameis.com")
-      fill_in('password', with: "pass")
-      fill_in('confirm password', with: "pass")
+      fill_in('First Name', with: "jeff")
+      fill_in('Last Name', with: "si")
+      fill_in('Email', with: "jeff@mynameis.com")
+      fill_in('Password', with: "pass")
+      fill_in('Confirm Password', with: "pass")
 
       click_on "Submit"
 
