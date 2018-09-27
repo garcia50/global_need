@@ -3,7 +3,7 @@
     <div class="text-center">
       <h2>Modify Account</h2>
       <br>
-      <%= form_for current_user,:html=>{:class => 'login-form'} do |f| %>  
+      <%= form_for current_user, :html=>{:class => 'login-form'} do |f| %>  
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control" %>
 
