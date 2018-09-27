@@ -15,7 +15,6 @@ describe "As an unauthorized visitor" do
 
       it "I can log in using my credentials" do
         org = create(:organization)
-        user = create(:user)
 
         visit organization_path(org)
         click_on "Sign In To Contact Us"
