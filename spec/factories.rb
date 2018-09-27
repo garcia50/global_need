@@ -6,7 +6,7 @@ FactoryBot.define do
     sequence(:email)       { |n| "Red#{n}@Cross.com" }
     sequence(:phone)       { |n| "#{n}000000" }
     sequence(:address)     { |n| "#{n}234 obt way" }
-    role 0
+    user
   end
 
   factory :user do
