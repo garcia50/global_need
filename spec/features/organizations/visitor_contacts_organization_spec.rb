@@ -67,11 +67,11 @@ describe "As an unauthorized visitor" do
       expect(current_path).to eq new_user_path
 
 
-      fill_in('first name', with: "jeff")
-      fill_in('last name', with: "si")
-      fill_in('email', with: "jeff@mynameis.com")
-      fill_in('password', with: "pass")
-      fill_in('confirm password', with: "pass")
+      fill_in('First Name', with: "jeff")
+      fill_in('Last Name', with: "si")
+      fill_in('Email', with: "jeff@mynameis.com")
+      fill_in('Password', with: "pass")
+      fill_in('Confirm Password', with: "pass")
 
       click_on "Submit"
 
