@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(slug: params[:slug])
+    @user = User.find(params[:id])
     @organization = current_user.organization
   end
 
@@ -63,13 +63,13 @@ class UsersController < ApplicationController
       :age,
       :skills,
       :password, 
-      :password_confirmation,
-      :slug
+      :password_confirmation
+      # :slug
     )
   end
 
   def authorize_user
-    unless current_user.id == params[:slug].to_i #In the future you can append additional statements here. ex: (current_user.id == params[user.id].to_i) && current_user.admin? 
+    unless current_user.id == params[:id].to_i #In the future you can append additional statements here. ex: (current_user.id == params[user.id].to_i) && current_user.admin? 
       redirect_to root_path
       flash[:notice] = "Opps!! You do not have access to this page."
     end
