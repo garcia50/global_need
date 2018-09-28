@@ -1,7 +1,7 @@
 require 'rails_helper'    
 
 describe OrganizationsController do
-  describe "POST #create" do
+  describe "POST #update" do
     context "given a successful org creation" do
       # let(:params) do
       #   {
