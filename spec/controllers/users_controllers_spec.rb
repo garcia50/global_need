@@ -52,11 +52,6 @@ describe UsersController do
         expect(response).to render_template(:new)
       end
     end
-
-    context "given a successful user org account" do 
-      
-
-    end
   end
 
   describe "PUT #update" do
@@ -109,7 +104,42 @@ describe UsersController do
       
     end
   end
+
+  describe "Post #create" do 
+    context "given a successful user org account" do 
+      let(:params) do
+        {
+          first_name: "lou", 
+          last_name: "gar",
+          email: "lou@gmail.com",
+          password: "pass",
+          password_confirmation: "pass",
+          organization: {
+            name: "Health First",
+            email: "hf@health.org",
+            address: "601 E Rollins St, Orlando, FL 32803",
+          }
+        }
+      end
+
+      it "redirects back to the edit_org path" do
+        post(:create, params: {user: params})
+        org = Organization.last.id
+        expect(response).to redirect_to edit_organization_path(org)
+      end
+
+    end
+  end
+
 end
+
+# name: "lou", 
+# description: "gar",
+# bio: "Help build shelters throughout remote countries for desperate people.",
+# email: "lou@gmail.com",
+# phone: "800-1RESCUE",
+# address: "1000 W. Colonial Dr, Orlando, Florida, United States",
+# user_id: user.id
 
 
 
