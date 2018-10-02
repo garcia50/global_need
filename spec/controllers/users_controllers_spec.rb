@@ -128,6 +128,10 @@ describe UsersController do
         expect(response).to redirect_to edit_organization_path(org)
       end
 
+      it "creates a welcome messgae" do
+        post(:create, params: {user: params})
+        expect(flash[:notice]).to be_present
+      end
     end
   end
 
@@ -147,8 +151,32 @@ end
 
 
 
+    context "given a unsuccessful user org creation" do
+      let(:params) do
+        {
+          first_name: "lou", 
+          last_name: "gar",
+          password: "pass",
+          password_confirmation: "pass",
+          organization: {
+            name: "Health First",
+            email: "hf@health.org",
+            address: "601 E Rollins St, Orlando, FL 32803",
+          }
+        }
+      end
 
+      it "creates an error message" do 
+        post(:create, params: {user: params})
+        expect(flash[:error]).to be_present
+      end
 
+      it "renders the new template" do
+        post(:create, params: {user: params})
+        expect(response).to render_template(:new)
+      end
+    end
+  end
 
 
 
