@@ -133,23 +133,6 @@ describe UsersController do
         expect(flash[:notice]).to be_present
       end
     end
-  end
-
-end
-
-# name: "lou", 
-# description: "gar",
-# bio: "Help build shelters throughout remote countries for desperate people.",
-# email: "lou@gmail.com",
-# phone: "800-1RESCUE",
-# address: "1000 W. Colonial Dr, Orlando, Florida, United States",
-# user_id: user.id
-
-
-
-
-
-
 
     context "given a unsuccessful user org creation" do
       let(:params) do
@@ -177,14 +160,64 @@ end
       end
     end
   end
+#############################
 
 
+  describe "PUT #update" do
+    context "modifying given user org data" do
+      let(:params) do
+        {
+          first_name: "lou", 
+          last_name: "gar",
+          password: "pass",
+          password_confirmation: "pass",
+          organization: {
+            name: "Health First",
+            email: "hf@health.org",
+            address: "601 E Rollins St, Orlando, FL 32803",
+          }
+        }
+      end
 
+      context "given a successful user org modification" do
+        before do
+          @org = create(:organization) 
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@org)
+        end
 
+        # it "renders a success message" do
+        #   patch(:update, params: {id: @org.id, user: params.merge(first_name: "dav")} )
+        #   expect(flash[:notice]).to be_present
+        # end
 
+      #   it "redirects to user path" do
+      #     patch(:update, params: {id: @user.id, user: params.merge(first_name: "dav")} )
+      #     expect(response).to redirect_to user_path(@user)
+      #   end
+      end
 
+      # context "given an unsuccessful user modification" do
+      #   before do
+      #     @user = create(:user) 
+      #     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      #   end
 
+      #   it "renders an error message" do
+      #     patch(:update, params: {id: @user.id, user: {first_name: nil}})
+      #     expect(flash[:error]).to be_present
+      #   end
+      # end
 
+      context "given an unauthenticated user" do 
+        it "redirects back to the home page" do
+          user = create(:user)
+          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
+          expect(response).to redirect_to root_path
+        end
+      end
+    end
+  end
+end
 
 
 
