@@ -135,6 +135,7 @@ describe UsersController do
     end
 
     context "given a unsuccessful user org creation" do
+      #Creates user without an email
       let(:params) do
         {
           first_name: "lou", 
@@ -160,8 +161,6 @@ describe UsersController do
       end
     end
   end
-#############################
-
 
   describe "PUT #update" do
     context "modifying given user org data" do
