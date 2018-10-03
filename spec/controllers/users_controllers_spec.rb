@@ -190,15 +190,11 @@ describe UsersController do
           expect(flash[:notice]).to be_present
         end
 
-        # it "renders a success message" do
-        #   patch(:update, params: {id: @org.id, user: params.merge(first_name: "dav")} )
-        #   expect(flash[:notice]).to be_present
-        # end
 
-      #   it "redirects to user path" do
-      #     patch(:update, params: {id: @user.id, user: params.merge(first_name: "dav")} )
-      #     expect(response).to redirect_to user_path(@user)
-      #   end
+        it "redirects to user path" do
+          patch(:update, params: {id: @user.id, user: params.merge(name: "Health Central")})
+          expect(response).to redirect_to user_path(@user)
+        end
       end
 
       # context "given an unsuccessful user modification" do
