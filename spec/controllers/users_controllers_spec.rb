@@ -180,8 +180,14 @@ describe UsersController do
 
       context "given a successful user org modification" do
         before do
-          @org = create(:organization) 
-          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@org)
+          @user = create(:user) 
+          @org = create(:organization)
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+        end
+
+        it "renders a success message" do
+          patch(:update, params: {id: @user.id, user: params.merge(name: "Health Central ")})
+          expect(flash[:notice]).to be_present
         end
 
         # it "renders a success message" do
