@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   def authorize_user
     unless current_user.id == params[:id].to_i #In the future you can append additional statements here. ex: (current_user.id == params[user.id].to_i) && current_user.admin? 
       redirect_to root_path
-      flash[:notice] = "Opps!! You do not have access to this page."
+      flash[:error] = "Opps!! You do not have access to this page."
     end
   end
 end
