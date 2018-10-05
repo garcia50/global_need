@@ -68,6 +68,17 @@ class UsersController < ApplicationController
     )
   end
 
+  def org_params
+    params.require(:organization).permit(
+      :name, 
+      :email,
+      :phone,
+      :description,
+      :bio,
+      :address
+    )
+  end
+
   def authorize_user
     unless current_user.id == params[:id].to_i #In the future you can append additional statements here. ex: (current_user.id == params[user.id].to_i) && current_user.admin? 
       redirect_to root_path
