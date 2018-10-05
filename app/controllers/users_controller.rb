@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def update
     @organization = current_user.organization
-    if current_user.update(user_params)
+    if current_user.update(user_params) && @organization.update(org_params)
       flash[:notice] = "Your profile has been updated."
       redirect_to user_path(current_user)
     else
