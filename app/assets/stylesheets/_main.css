@@ -141,9 +141,11 @@ html, body {
   justify-content: center;
   align-items: center;
   top: 0;
-  margin-bottom: 200px;
-  /*padding-top: 10%;*/
-  margin-top: 15%
+  margin-top: 12%;
+}
+
+.links{
+  margin-bottom: 4%;
 }
 
 .edit-locations {
