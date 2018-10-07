@@ -44,7 +44,8 @@ class OrganizationsController < ApplicationController
       :phone,
       :description,
       :bio,
-      :address
+      :address,
+      :user_id
     )
   end
 
