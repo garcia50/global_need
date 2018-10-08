@@ -186,13 +186,14 @@ describe UsersController do
         end
 
         it "renders a success message" do
-          patch(:update, params: {id: @user.id, user: params.merge(name: "Health Central ")})
+          params[:organization].merge!(name: "Health Central")
+          patch(:update, params: {id: @user.id, user: params})
           expect(flash[:notice]).to be_present
         end
 
-
         it "redirects to user path" do
-          patch(:update, params: {id: @user.id, user: params.merge(name: "Health Central")})
+          params[:organization].merge!(name: "Health Central")
+          patch(:update, params: {id: @user.id, user: params})
           expect(response).to redirect_to user_path(@user)
         end
       end
