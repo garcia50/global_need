@@ -102,7 +102,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Your profile has been updated."
       redirect_to user_path(current_user)
     else
-      flash.now[:error] = updated_user.errors.full_messages
+      flash.now[:error] = current_user.errors.full_messages
       render :edit
     end
   end
