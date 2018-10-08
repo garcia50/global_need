@@ -36,13 +36,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @organization = current_user.organization
-    if current_user.update(user_params) && @organization.update(org_params)
-      flash[:notice] = "Your profile has been updated."
-      redirect_to user_path(current_user)
+    if params[:user].include?(:organization)
+      updated_user_org
     else
-      flash.now[:error] = current_user.errors.full_messages
-      render :edit
+      updated_user
     end
   end
 
