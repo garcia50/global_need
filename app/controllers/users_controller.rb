@@ -83,6 +83,20 @@ class UsersController < ApplicationController
     )
   end
 
+  def updated_user_org
+    @organization = current_user.organization
+    updated_user = current_user.update(user_params)
+    updated_org = @organization.update(org_params)
+    if updated_user && updated_org
+      flash[:notice] = "Your profile has been updated."
+      redirect_to user_path(current_user)
+    else
+      flash.now[:error] = current_user.errors.full_messages
+      flash.now[:error] += @organization.errors.full_messages
+      render :edit
+    end
+  end
+
     end
   end
 end
