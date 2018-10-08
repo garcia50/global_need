@@ -90,7 +90,7 @@ describe UsersController do
         end
 
         it "renders an error message" do
-          patch(:update, params: {id: user.id, user: {first_name: nil}})
+          patch(:update, params: {id: user.id, user: {first_name: ""}})
           expect(flash[:error]).to be_present
         end
       end
@@ -181,7 +181,7 @@ describe UsersController do
       context "given a successful user org modification" do
         before do
           @user = create(:user) 
-          @org = create(:organization)
+          @user.organization = create(:organization)
           allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         end
 
