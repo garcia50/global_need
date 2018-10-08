@@ -215,22 +215,10 @@ describe UsersController do
       context "given an unauthenticated user" do 
         it "redirects back to the home page" do
           user = create(:user)
-          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")} )
+          patch(:update, params: {id: user.id, user: params.merge(first_name: "dav")})
           expect(response).to redirect_to root_path
         end
       end
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
