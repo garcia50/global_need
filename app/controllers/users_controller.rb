@@ -73,7 +73,7 @@ class UsersController < ApplicationController
   end
 
   def org_params
-    params.require(:organization).permit(
+    params[:user].require(:organization).permit(
       :name, 
       :email,
       :phone,
