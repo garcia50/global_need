@@ -198,17 +198,18 @@ describe UsersController do
         end
       end
 
-      # context "given an unsuccessful user modification" do
-      #   before do
-      #     @user = create(:user) 
-      #     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-      #   end
-
       #   it "renders an error message" do
       #     patch(:update, params: {id: @user.id, user: {first_name: nil}})
       #     expect(flash[:error]).to be_present
       #   end
       # end
+      context "given an unsuccessful user modification" do
+        before do
+          @user = create(:user) 
+          @user.organization = create(:organization) 
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+        end
+
 
       context "given an unauthenticated user" do 
         it "redirects back to the home page" do
