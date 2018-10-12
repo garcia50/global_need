@@ -14,6 +14,19 @@ describe "As a visitor, when I visit the organization index page" do
       expect(page).to have_current_path(organization_path(org))    
     end
 
+    it "should have organization content" do
+      org = create(:organization, name: 'Red Cross3')
+
+      visit organizations_path
+      first('.panel > a').click
+
+      expect(page).to have_content('Red Cross3')
+      expect(page).to have_content('Who We Are')
+      expect(page).to have_content('people')
+      expect(page).to have_button('Sign In To Contact Us')
+    end
+  end
+
   describe "After entering an organizations show page" do
     it "I can see email link for the organization" do
       user = create(:user)
