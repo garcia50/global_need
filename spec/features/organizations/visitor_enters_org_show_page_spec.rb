@@ -14,5 +14,19 @@ describe "As a visitor, when I visit the organization index page" do
       expect(page).to have_current_path(organization_path(org))    
     end
 
+  describe "After entering an organizations show page" do
+    it "I can see email link for the organization" do
+      user = create(:user)
+      org = create(:organization)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit organization_path(org)
+
+      expect(page).to have_link(href: 'mailto: Red11@Cross.com')
+      expect(page).to have_content('Red11@Cross.com')
+    end
+  end
+
+
 end
 
