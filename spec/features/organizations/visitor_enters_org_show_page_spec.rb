@@ -39,7 +39,4 @@ describe "As a visitor, when I visit the organization index page" do
       expect(page).to have_content('Red11@Cross.com')
     end
   end
-
-
 end
-
