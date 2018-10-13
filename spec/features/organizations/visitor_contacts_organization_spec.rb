@@ -13,7 +13,7 @@ describe "As an unauthorized visitor" do
         expect(current_path).to eq login_path
       end
 
-      it "I can log in using my credentials" do
+      it "I can log in using my credentials and be redirected to previous location" do
         org = create(:organization)
 
         visit organization_path(org)
