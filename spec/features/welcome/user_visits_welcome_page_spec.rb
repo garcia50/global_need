@@ -17,5 +17,12 @@ describe "As a visitor" do
       click_on "Global Need"
       expect(current_path).to eq organizations_path
     end
+
+    it "A visitor clicks on login link - enters login page" do 
+      visit root_path
+      click_on "login"
+      expect(current_path).to eq login_path
+    end
+
   end
 end
