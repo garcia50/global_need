@@ -24,5 +24,10 @@ describe "As a visitor" do
       expect(current_path).to eq login_path
     end
 
+    it "A visitor clicks on signup link - enters signup page" do 
+      visit root_path
+      click_on "signup"
+      expect(current_path).to eq new_user_path
+    end
   end
 end
