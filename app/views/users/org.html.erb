@@ -1,5 +1,5 @@
 <div class="new-account">
-  <div class="login">
+  <div class="new-login">
     <br>
     <h2>Create Account</h2>
     <%= form_for @user,:html=>{:class => 'login-form'} do |f| %>  
@@ -35,7 +35,6 @@
       <%= f.submit "Submit", class: 'btn btn-default btn-lg btn-submit' %>
     <% end %>
 
-    <br>
     <br>
     <br>
     <%= link_to "<- Back", root_path %>
