@@ -101,6 +101,11 @@ html, body {
   align-items: center;
 }
 
+.new-login {
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
 .new-location {
   text-align: -webkit-center;
   height: 100%;
