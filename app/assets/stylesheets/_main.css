@@ -74,9 +74,9 @@ html, body {
 }
 
 .welcome-pictures {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
-  height: 70%;
 }
 
 .login-form {
