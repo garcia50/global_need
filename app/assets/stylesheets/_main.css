@@ -87,6 +87,12 @@ html, body {
   margin-bottom: 5%;
 }
 
+.purpose {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .login-form {
   text-align: -webkit-center;
   height: 100%;
