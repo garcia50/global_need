@@ -58,6 +58,10 @@ html, body {
 .user-icon:hover .user-icon-content {display: block;}
 
 .welcome {
+  padding-bottom: 25%;
+}
+
+.title {
   text-align: -webkit-center;
   display: flex;
   justify-content: center;
