@@ -12,19 +12,34 @@
     <%= image_tag("volunteer_3.jpeg", border: 0, class: "mySlides")%>
   </div> 
 
-<script>
-  var myIndex = 0;
-  carousel();
+  <script>
+    var myIndex = 0;
+    carousel();
 
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
     }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-  }
-</script>
+  </script>
+
+  <div class="striped-border"></div>
+
+  <div class="mission">
+    <h4><p>Our Purpose</p></h4>
+    <p>
+      Global Need makes it easy for any willing person regardless of background or trade skills 
+      to find the perfect match to one of the many organizations that currently exist today.
+      We help people make the connection to an organization that matches their knowledge,
+      skills and heart. Even if one doesn't posses any skills Global Need with help find a 
+      group in which they can still make a great difference.
+    </p>
+  </div>
+
+</div>
