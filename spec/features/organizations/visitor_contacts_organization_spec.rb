@@ -81,5 +81,3 @@ describe "As an unauthorized visitor" do
     end
   end
 end
-
-
