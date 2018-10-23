@@ -13,7 +13,7 @@
     <%= link_to image_tag("user-icon.png", border: 0, width: 35, height: 35), edit_user_path(current_user), class: "user-icon" %>
   <% else %>
     <div class="login">
-      <%= link_to "login", login_path %> /
+      <%= link_to "login", login_path %> -
       <%= link_to "signup", new_user_path%>
     </div>
   <% end %>
